@@ -2,16 +2,28 @@
 
 A GUI application for creating rotoscope-style animations from videos using edge detection.
 
+## Preview
+![Demo Animation](splitscreen_flare_gif.gif)
+
 ![Screenshot](preview.png)
 
 ## Features
 
-- Process videos into stylized edge animations
-- Two edge detection methods:
-  - Canny edge detection (with color channel weighting)
-  - Scharr gradient magnitude
-- Real-time preview for setting adjustments
-- Export to MP4
+- **Multiple Processing Modes**:
+  - Classic edge detection (Canny/Scharr)
+  - Depth-based edge detection (using Depth-Anything V2 model)
+- **Enhanced Controls**:
+  - Adjustable line thickness (1-10px)
+  - Frame stepping (process every 1-10 frames)
+  - Output FPS control (1-30 FPS)
+  - RGB channel weighting for color-sensitive edges
+- **Background Options**:
+  - Original video background
+  - Black background
+  - Depth map visualization
+- **Real-time preview** of processing results
+- **Export to MP4** with customizable settings
+
 
 ## Getting Started
 
@@ -42,6 +54,8 @@ Pre-built executables are available in the [Releases section](https://github.com
 | Overlay on Original   | Draw contours over original video or blank       |
 | Use Sharpening        | Apply sharpening before detection                |
 | RGB Channel Weights   | Per-channel edge strength tuning                 |
+| Use Sharpening        | Apply sharpening before edge detection           |
+| Use Depth             | Enable depth-based processing                    |
 
 ## How to Use
 
@@ -52,10 +66,11 @@ Pre-built executables are available in the [Releases section](https://github.com
 ## Tips
 - Use Frame Step values of 2-3 to achieve the classic "animated on 2s or 3s" look 
 - Higher bilateral filter values create softer edges
-- Try different RGB weight combinations for artistic effects
 
 ## About
 
 This is a hobby project created for fun. The application provides an easy way to experiment with video processing and edge detection techniques.
 
 For those who don't want to install Python, pre-built Windows executables are available in the Releases section. The source code is provided for those who want to modify or extend the functionality.
+
+*Example output using depth estimation (image adapted from [MegaSaM](https://mega-sam.github.io/index.html) paper, credit to original authors)*
